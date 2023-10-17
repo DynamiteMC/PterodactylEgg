@@ -1,0 +1,29 @@
+{
+  "_comment": "DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PTERODACTYL PANEL - PTERODACTYL.IO",
+  "meta": {
+    "version": "PTDL_v1",
+    "update_url": null
+  },
+  "exported_at": "2021-11-26T00:05:33+00:00",
+  "name": "Dynamite",
+  "author": "xcheez4@gmail.com",
+  "description": "Minecraft server software written in Go",
+  "features": null,
+  "images": ["ghcr.io/parkervcp/yolks:debian"],
+  "file_denylist": [],
+  "startup": "./dynamite",
+  "config": {
+    "files": "{\r\n    \"config.toml\": {\r\n        \"parser\": \"toml\",\r\n        \"find\": {\r\n            \"server_port\": \"{{server.build.default.port}}\"\n\r        }\n\r    }\r\n}",
+    "startup": "{\r\n    \"done\": \"Startup complete\"\r\n}",
+    "logs": "{}",
+    "stop": "stop"
+  },
+  "scripts": {
+    "installation": {
+      "script": "#!/bin/ash\r\n# Dynamite\r\n#\r\ncd /home/container\r\n\r\ngit clone https://github.com/DynamiteMC/Dynamite D\r\ncd D\r\ngo build\r\nmv dynamite ..\r\ncd ..\r\nrm -r D\r\nchmod u+x dynamite",
+      "container": "ghcr.io/matthewpi/images:go1.21",
+      "entrypoint": "bash"
+    }
+  },
+  "variables": []
+}
