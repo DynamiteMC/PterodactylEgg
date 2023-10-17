@@ -14,7 +14,7 @@
   "startup": "./dynamite",
   "config": {
     "files": "{\r\n    \"config.toml\": {\r\n        \"parser\": \"toml\",\r\n        \"find\": {\r\n            \"server_port\": \"{{server.build.default.port}}\"\n\r        }\n\r    }\r\n}",
-    "startup": "{\r\n    \"done\": \"Startup complete\"\r\n}",
+    "startup": "{\r\n    \"done\": \"Done\"\r\n}",
     "logs": "{}",
     "stop": "stop"
   },
